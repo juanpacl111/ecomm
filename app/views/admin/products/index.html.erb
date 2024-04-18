@@ -22,7 +22,7 @@
         <% @admin_products.each do |p| %>
           <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 underline">
-              <%= p.image.attached? ? image_tag(p.image.variant(resize_to_limit: [50, 50], format: :png)) : image_tag("https://via.placeholder.com/50") %>
+              <%= p.images.any? ? image_tag(p.images.first.variant(:thumb)) : image_tag("https://via.placeholder.com/50") %>
             </td>
             <td class="py-4 px-6"><%= p.name %></td>
             <td class="py-4 px-6"><%= number_to_currency(p.price, precision: 0) %></td>
