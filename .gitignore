@@ -39,3 +39,5 @@
 
 .vscode
 format_erb.rb
+
+.DS_Store
